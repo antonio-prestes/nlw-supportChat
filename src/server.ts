@@ -1,4 +1,5 @@
 import express, {request, response} from "express";
+import "./database";
 
 const app = express();
 
