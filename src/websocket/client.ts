@@ -3,7 +3,7 @@ import {ConnectionsServices} from "../services/ConnectionsServices";
 import {UsersServices} from "../services/UsersServices";
 import {MessagesService} from "../services/MessagesService";
 
-interface  IParams {
+interface IParams {
     text: string
     email: string
 }
