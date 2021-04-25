@@ -3,7 +3,7 @@ import {UserRepository} from "../repositories/UserRepository";
 import {User} from "../entities/User";
 
 class UsersServices {
-    private userRepository: Repository<User>
+    private userRepository: UserRepository
 
     constructor() {
         this.userRepository = getCustomRepository(UserRepository);
@@ -22,6 +22,13 @@ class UsersServices {
         await this.userRepository.save(user)
         return user
     }
+
+    async findByEmail(email: string) {
+        const user = await this.userRepository.findOne({email});
+
+        return user;
+    }
+
 }
 
 export {UsersServices}

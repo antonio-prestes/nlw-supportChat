@@ -5,13 +5,14 @@ import {
     JoinColumn,
     ManyToOne,
     PrimaryColumn,
+    UpdateDateColumn,
 } from 'typeorm';
 import { v4 as uuidV4 } from 'uuid';
 
 import { User } from './User';
 
-@Entity('messages')
-class Message {
+@Entity("connections")
+class Connection {
     @PrimaryColumn()
     id: string;
 
@@ -26,14 +27,17 @@ class Message {
     user: User;
 
     @Column()
-    text: string;
+    socket_id: string;
 
     @CreateDateColumn()
     created_at: Date;
+
+    @UpdateDateColumn()
+    updated_at: Date;
 
     constructor() {
         if (!this.id) this.id = uuidV4();
     }
 }
 
-export { Message };
+export { Connection };
