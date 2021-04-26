@@ -96,7 +96,7 @@ function sendMessage(id) {
 
 socket.on("admin_receive_message", (data) => {
   const connection = connectionInSupport.find(
-      connection => connection.socket_id === data.socket_id,
+      (connection) => connection.socket_id === data.socket_id,
   );
 
   const divMessages = document.getElementById(
